@@ -1,0 +1,17 @@
+
+
+ffmpeg -i input.mp4 scale=1080:1920 output.mp4
+
+--- 输入的是 2.mp4，是720p；输出的是 2_new.mp4，是 360p；  缩小mp4的体积；
+ffmpeg -i 2.mp4 -strict -2 -vf scale=-1:360 2_new.mp4   
+
+--- 输入的是 1.mp4 ；输出的是 1.mp3， 视频提取出了音频；
+ffmpeg -i 1.mp4 20201108.mp3
+
+-----
+ffmpeg  -i 11.mp4 -vcodec copy -acodec copy -ss 00:26:10 -to 00:29:15 ./11_small.mp4 -y
+
+---  从视频开始，得到前1.5分钟（90秒处）视频命令如下：
+ffmpeg -ss 00:00:00 -i 3.mp4 -c copy -t  90  output.mp4  
+
+
